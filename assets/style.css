@@ -1,0 +1,54 @@
+body {
+  background-image: url('/assets/slapgamebackground.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+#logo {
+  height: auto;
+  width: 100%;
+  max-width: 200px;
+}
+
+#title {
+font-family: "Bangers";
+color: #d72a90;
+text-shadow: 1px 1px 2px black;
+}
+
+h1 {
+  font-size: 15vh;
+}
+
+h2 {
+  font-family: "Bangers";
+}
+
+#discord-image {
+  height: auto;
+  width: 100%;
+  min-height: 80px;
+  min-width: 100px;
+  max-width: 350px;
+}
+
+#cooperation-button{
+  background-color: #fe7f49;
+}
+#kindness-button{
+  background-color: #d38efe;
+}
+#generosity-button{
+  background-color: #7bff5c;
+}
+#modifier1-button{
+  background-color: #744948;
+}
+#modifier2-button{
+  background-color: #c4bda2;
+}
+#modifier3-button{
+  background-color: #6f3198;
+}
