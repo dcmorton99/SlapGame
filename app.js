@@ -2,50 +2,71 @@
 let foes = {
   name: 'Discord',
   health: 100,
+  items: [],
+
 }
 
-function cooperation() {
-  if (foes.health >= 0) {
-    foes.health--;
-    update(foes.health)
-  }
+let modifiers = {
+  friction: { name: 'friction', modifier: 2 },
+  disharmony: { name: 'disharmony', modifier: 4 },
+  strife: { name: 'strife', modifier: 6 },
 }
 
-function kindness() {
-  if (foes.health >= 5) {
-    foes.health = foes.health - 5;
-    update(foes.health)
+function addMods() {
+  let modHealth = 0
+  for (let i = 0; i < foes.items.length; i++) {
+    let item = foes.items[i]
+    modHealth += item.modifier
   }
-}
-
-function generosity() {
-  if (foes.health >= 10) {
-    foes.health = foes.health - 10;
-    update(foes.health)
-  }
+  return modHealth
 }
 
 function friction() {
-  if (foes.health <= 98) {
-    foes.health = foes.health + 2;
-    update(foes.health)
-  }
+  foes.items.push(modifiers.friction)
 }
 
 function disharmony() {
-  if (foes.health <= 96) {
-    foes.health = foes.health + 4;
-    update(foes.health)
-  }
+  foes.items.push(modifiers.disharmony)
 }
+
 function strife() {
-  if (foes.health <= 94) {
-    foes.health = foes.health + 6;
-    update(foes.health)
-  }
+  foes.items.push(modifiers.strife)
 }
 
 function update() {
-  document.getElementById("foe-health").innerText = foes.health
+  document.getElementById("foe-health").innerText = foes.health.toString()
 }
+
+function generosity() {
+  foes.health = foes.health - 1 + addMods();
+  update()
+}
+
+function kindness() {
+  foes.health = foes.health - 5 + addMods();
+  update()
+}
+
+function generosity() {
+  foes.health = foes.health - 10 + addMods();
+  update()
+}
+
+
+// function disharmony() {
+//   if (foes.health <= 96) {
+//     foes.health = foes.health + 4;
+//     update(foes.health)
+//   }
+// }
+// function strife() {
+//   if (foes.health <= 94) {
+//     foes.health = foes.health + 6;
+//     update(foes.health)
+//   }
+// }
+
+
+
+
 
