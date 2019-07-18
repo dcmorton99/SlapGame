@@ -51,22 +51,3 @@ function generosity() {
   foes.health = foes.health - 10 + addMods();
   update()
 }
-
-
-// function disharmony() {
-//   if (foes.health <= 96) {
-//     foes.health = foes.health + 4;
-//     update(foes.health)
-//   }
-// }
-// function strife() {
-//   if (foes.health <= 94) {
-//     foes.health = foes.health + 6;
-//     update(foes.health)
-//   }
-// }
-
-
-
-
-
